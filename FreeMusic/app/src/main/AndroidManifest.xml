@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.alex.freemusic">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <service android:name="com.startapp.android.publish.common.metaData.PeriodicMetaDataService" />
+    <service android:name="com.startapp.android.publish.common.metaData.InfoEventService" />
+
+    <receiver android:name="com.startapp.android.publish.common.metaData.BootCompleteListener">
+        <intent-filter>
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+        </intent-filter>
+    </receiver>
+
+
+    <!-- @string/app_name -->
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="Mp3 Downloader"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="music.mp3.downloader.free.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="8fe826b0f0e36669c26292d885d2a4a21065c4ff" />
+
+        <activity
+            android:name="com.startapp.android.publish.ads.list3d.List3DActivity"
+            android:theme="@android:style/Theme" />
+        <activity
+            android:name="com.startapp.android.publish.adsCommon.activities.OverlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name="com.startapp.android.publish.adsCommon.activities.FullScreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme" />
+        <activity android:name="music.mp3.downloader.free.Main2Activity" />
+        <activity android:name="music.mp3.downloader.free.Main3Activity" />
+        <activity android:name="music.mp3.downloader.free.Main4Activity" />
+        <activity
+            android:name="music.mp3.downloader.free.PopWindow"
+            android:theme="@style/AppTheme.CustomTheme2" />
+        <activity android:name="music.mp3.downloader.free.ActivityWeb" />
+        <activity android:name="music.mp3.downloader.free.ButtonActivity" />
+        <activity android:name="music.mp3.downloader.free.ActivityReport" />
+        <activity android:name="music.mp3.downloader.free.ActivityCC"></activity>
+    </application>
+
+</manifest>
