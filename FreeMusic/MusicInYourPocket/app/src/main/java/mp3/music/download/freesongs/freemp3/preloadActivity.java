@@ -48,14 +48,11 @@ public class preloadActivity extends AppCompatActivity {
                             nextActivity();
                             executorService.shutdown();
                         }
-                        if(setFlag == true && !Appodeal.isLoaded(Appodeal.INTERSTITIAL) && i>10){
+                        if(setFlag == true && i>10){
                             nextActivity();
                             executorService.shutdown();
                         }
-                        if(setFlag == false && Appodeal.isLoaded(Appodeal.INTERSTITIAL)==false && i>9){
-                            nextActivity();
-                           executorService.shutdown();
-                        }
+
                     }
                 }, 0, 1, TimeUnit.SECONDS);
             }
@@ -102,7 +99,6 @@ public class preloadActivity extends AppCompatActivity {
                     Gson gson = new Gson();
                     resultSettings = gson.fromJson(readAll(stream), ResultSettings.class);
                     Log.d("lol", readAll(stream));
-                    if(resultSettings.data != null)
                     setFlag = true;
                 } catch (MalformedURLException e) {
                     e.printStackTrace();

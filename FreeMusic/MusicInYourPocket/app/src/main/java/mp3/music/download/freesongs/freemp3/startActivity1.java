@@ -42,9 +42,9 @@ public class startActivity1 extends AppCompatActivity {
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_start1);
         mAct = this;
-        if(preloadActivity.resultSettings.data == null){
-            preloadActivity.resultSettings.data  = new DataSettings(1,1,"",1,"");
-        }
+//        if(preloadActivity.resultSettings.data == null){
+//            preloadActivity.resultSettings.data  = new DataSettings(1,1,"",0,"");
+//        }
     }
 
     public void onClick(View view) {
