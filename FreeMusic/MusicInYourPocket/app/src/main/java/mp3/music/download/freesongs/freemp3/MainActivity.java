@@ -138,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
                         final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
                         try {
                             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(preloadActivity.resultSettings.data.getPopup_url())));
-                            // https://play.google.com/store/apps/details?id=music.mp3.apps.top.download
                             String urlStr = preloadActivity.resultSettings.data.getPopup_url();
                             urlStr = urlStr.substring(urlStr.indexOf("="));
                             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id" + urlStr)));
@@ -169,38 +168,3 @@ public class MainActivity extends AppCompatActivity {
 
         });
     }
-
-//    public void getJsonForSettings() {
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                try {
-//                    InputStream stream = null;
-//                    stream = new URL("http://asoptimize.me/settings.php")
-//                            .openConnection().getInputStream();
-//                    Gson gson = new Gson();
-//                    resultSettings = gson.fromJson(readAll(stream), ResultSettings.class);
-//                    Log.d("lol", readAll(stream));
-//                    setFlag = true;
-//                } catch (MalformedURLException e) {
-//                    e.printStackTrace();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }).start();
-//    }
-//
-//    public static String readAll(InputStream stream) {
-//        BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
-//        StringBuilder response = new StringBuilder();
-//        try {
-//            String readedLine;
-//            while ((readedLine = reader.readLine()) != null)
-//                response.append(readedLine).append("\n");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        return response.toString();
-//    }
-}
